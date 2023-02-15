@@ -24,20 +24,171 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 3rem;
   position: relative;
 }
 
 .main-container {
   width: 60%;
   background-color: var(--White);
-  padding: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  border-radius: 1rem;
 }
 
-.calculation-container {
+.card {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.input-container,
+.output-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container {
+  gap: 1rem;
+  padding-right: 2rem;
+  border-style: solid;
+}
+
+.bill-section,
+.tip-section,
+.people-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  color: var(--Very-dark-cyan);
+  font-size: 0.8rem;
+}
+
+.bill-input,
+.people-input {
+  position: relative;
+}
+
+.bill-input input,
+.people-input input {
+  width: 100%;
+  text-align: right;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  background-color: var(--Very-light-grayish-cyan);
+  color: var(--Very-dark-cyan);
+  outline-color: var(--Strong-cyan);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.bill-input img,
+.people-input img {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.tip-btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 1rem;
+  width: 100%;
+  border-style: solid;
+}
+
+.tip-btns button {
+  font-family: inherit;
+  font-size: 1.1rem;
+  width: 29%;
+  color: var(--White);
   background-color: var(--Very-dark-cyan);
+  border: none;
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.tip-btns button:hover {
+  color: var(--Very-dark-cyan);
+  background-color: var(--Strong-cyan);
+}
+
+.selected {
+  color: var(--Very-dark-cyan) !important;
+  background-color: var(--Strong-cyan) !important;
+}
+
+.tip-btns input {
+  font-family: inherit;
+  width: 22%;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 1rem;
+  border: none;
+  background-color: var(--Very-light-grayish-cyan);
+  border-radius: 0.2rem;
+  outline-color: var(--Strong-cyan);
+}
+
+.output-container {
+  background-color: var(--Very-dark-cyan);
+  border-radius: 1rem;
+  gap: 1rem;
+  padding: 2rem;
+  font-size: 0.9rem;
+}
+
+.tip-amount,
+.total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tip-amount h2,
+.total h2 {
+  font-size: 2rem;
+  color: var(--Strong-cyan);
+}
+
+.tip-amount span,
+.total span {
+  font-size: 0.7rem;
+  color: var(--Grayish-cyan);
+}
+
+.reset-btn {
+  font-family: inherit;
+  margin-top: auto;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  background-color: var(--Strong-cyan);
+  color: var(--Very-dark-cyan);
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  opacity: 20%;
+}
+
+.reset-btn:hover {
+  opacity: 100%;
 }
 
 .attribution {
