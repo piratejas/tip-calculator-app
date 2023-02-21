@@ -5,6 +5,7 @@ const numOfPeople = document.getElementById("people");
 const tipAmountPerPerson = document.getElementById("tipAmount");
 const totalToPayPerPerson = document.getElementById("totalAmount");
 const resetButton = document.getElementById("resetBtn");
+const cantBeZero = document.querySelector(".prompt");
 let tipValue = 0;
 
 buttons.forEach((button) => {
@@ -21,7 +22,6 @@ buttons.forEach((button) => {
       parseInt(tipValue),
       parseInt(numOfPeople.value)
     );
-    // console.log(e);
   });
 });
 
@@ -36,6 +36,12 @@ customTipPercentage.addEventListener("keyup", (e) => {
 });
 
 numOfPeople.addEventListener("keyup", (e) => {
+  if (e.target.value == 0) {
+    cantBeZero.hidden = false;
+  } else if (e.target.value !== 0 && cantBeZero.hidden == false) {
+    cantBeZero.hidden = true;
+  }
+
   calculateTip(
     parseFloat(billTotal.value),
     parseFloat(tipValue),
@@ -44,6 +50,11 @@ numOfPeople.addEventListener("keyup", (e) => {
 });
 
 function calculateTip(billTotal, tipPercentage, numberOfPeople) {
+  if (!billTotal || !tipPercentage || !numberOfPeople) {
+    tipAmountPerPerson.innerHTML = "$0.00";
+    totalToPayPerPerson.innerHTML = "$0.00";
+    return;
+  }
   let tipAmount = (billTotal * (tipPercentage / 100)) / numberOfPeople;
   let tip = Math.floor(tipAmount * 100) / 100;
   tip = tip.toFixed(2);
@@ -53,8 +64,6 @@ function calculateTip(billTotal, tipPercentage, numberOfPeople) {
 
   tipAmountPerPerson.innerHTML = `$${tip}`;
   totalToPayPerPerson.innerHTML = `$${totalAmount}`;
-
-  // console.log(tip, numberOfPeople, totalAmount);
 }
 
 resetButton.addEventListener("click", reset);
@@ -65,4 +74,5 @@ function reset() {
   billTotal.value = "";
   numOfPeople.value = "";
   customTipPercentage.value = "";
+  cantBeZero.hidden = true;
 }
