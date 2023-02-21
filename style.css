@@ -142,14 +142,10 @@ input[type="number"] {
   cursor: pointer;
 }
 
-.tip-btns button:hover {
+.tip-btns button:hover,
+.active {
   color: var(--Very-dark-cyan);
   background-color: var(--Strong-cyan);
-}
-
-.selected {
-  color: var(--Very-dark-cyan) !important;
-  background-color: var(--Strong-cyan) !important;
 }
 
 .tip-btns input {
