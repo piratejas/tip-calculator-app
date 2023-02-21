@@ -55,6 +55,7 @@ function calculateTip(billTotal, tipPercentage, numberOfPeople) {
     totalToPayPerPerson.innerHTML = "$0.00";
     return;
   }
+
   let tipAmount = (billTotal * (tipPercentage / 100)) / numberOfPeople;
   let tip = Math.floor(tipAmount * 100) / 100;
   tip = tip.toFixed(2);

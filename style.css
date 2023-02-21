@@ -43,7 +43,6 @@ body {
 
 .input-container,
 .output-container {
-  /* width: 50%; */
   display: flex;
   flex-direction: column;
 }
@@ -51,7 +50,6 @@ body {
 .input-container {
   gap: 1rem;
   width: 45%;
-  /* border-style: solid; */
 }
 
 .bill-section,
@@ -127,7 +125,6 @@ input[type="number"] {
   justify-content: space-evenly;
   gap: 1rem;
   width: 100%;
-  /* border-style: solid; */
 }
 
 .tip-btns button {
