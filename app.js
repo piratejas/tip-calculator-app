@@ -5,10 +5,11 @@ const numOfPeople = document.getElementById("people");
 const tipAmountPerPerson = document.getElementById("tipAmount");
 const totalToPayPerPerson = document.getElementById("totalAmount");
 const resetButton = document.getElementById("resetBtn");
+let tipValue = 0;
 
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
-    let tipValue = e.target.innerText;
+    tipValue = e.target.innerText;
     tipValue = tipValue.substr(0, tipValue.length - 1);
 
     if (billTotal.value === "") {
@@ -27,7 +28,7 @@ buttons.forEach((button) => {
   });
 });
 
-customTipPercentage.addEventListener("blur", (e) => {
+customTipPercentage.addEventListener("keyup", (e) => {
   if (billTotal.value === "") {
     reset();
     return;
@@ -36,9 +37,19 @@ customTipPercentage.addEventListener("blur", (e) => {
     numOfPeople.value = 1;
   }
 
+  tipValue = e.target.value;
+
   calculateTip(
     parseFloat(billTotal.value),
-    parseFloat(e.target.value),
+    parseFloat(tipValue),
+    parseInt(numOfPeople.value)
+  );
+});
+
+numOfPeople.addEventListener("keyup", (e) => {
+  calculateTip(
+    parseFloat(billTotal.value),
+    parseFloat(tipValue),
     parseInt(numOfPeople.value)
   );
 });
