@@ -1,5 +1,5 @@
 const billTotal = document.getElementById("bill");
-const customTipPercentage = document.getElementById("custom");
+const customTipPercentage = document.getElementById("tip");
 const buttons = document.querySelectorAll(".tip-btns button");
 const numOfPeople = document.getElementById("people");
 const tipAmountPerPerson = document.getElementById("tipAmount");
