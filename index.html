@@ -40,9 +40,12 @@
             </div>
           </div>
           <div class="people-section">
-            <label for="people"> Number of People </label>
+            <div class="people-text">
+              <label for="people"> Number of People </label>
+              <p class="prompt" hidden>Can't be zero</p>
+            </div>
             <div class="people-input">
-              <input type="number" placeholder="0" id="people" />
+              <input type="number" placeholder="0" id="people" required />
               <img src="images/icon-person.svg" alt="person" />
             </div>
           </div>

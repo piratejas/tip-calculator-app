@@ -9,34 +9,23 @@ let tipValue = 0;
 
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
+    customTipPercentage.value = "";
+
+    // button.classList.toggle("selected");
+
     tipValue = e.target.innerText;
     tipValue = tipValue.substr(0, tipValue.length - 1);
-
-    if (billTotal.value === "") {
-      return;
-    }
-    if (numOfPeople.value === "") {
-      numOfPeople.value = 1;
-    }
 
     calculateTip(
       parseFloat(billTotal.value),
       parseInt(tipValue),
       parseInt(numOfPeople.value)
     );
-    console.log(tipValue);
+    // console.log(e);
   });
 });
 
 customTipPercentage.addEventListener("keyup", (e) => {
-  if (billTotal.value === "") {
-    reset();
-    return;
-  }
-  if (numOfPeople.value === "") {
-    numOfPeople.value = 1;
-  }
-
   tipValue = e.target.value;
 
   calculateTip(
@@ -65,7 +54,7 @@ function calculateTip(billTotal, tipPercentage, numberOfPeople) {
   tipAmountPerPerson.innerHTML = `$${tip}`;
   totalToPayPerPerson.innerHTML = `$${totalAmount}`;
 
-  console.log(tip, numberOfPeople, totalAmount);
+  // console.log(tip, numberOfPeople, totalAmount);
 }
 
 resetButton.addEventListener("click", reset);

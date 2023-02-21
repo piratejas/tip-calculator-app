@@ -37,6 +37,7 @@ body {
 .card {
   display: flex;
   padding: 2rem;
+  gap: 2rem;
   justify-content: space-between;
 }
 
@@ -66,6 +67,17 @@ label {
   font-size: 0.8rem;
 }
 
+.prompt {
+  color: red;
+  font-size: 0.8rem;
+  justify-content: end;
+}
+
+.people-text {
+  display: flex;
+  justify-content: space-between;
+}
+
 .bill-input,
 .people-input {
   position: relative;
@@ -84,6 +96,10 @@ label {
   outline-color: var(--Strong-cyan);
   cursor: pointer;
   font-family: inherit;
+}
+
+.people-input input:invalid {
+  outline-color: red;
 }
 
 .bill-input img,
