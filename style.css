@@ -199,7 +199,8 @@ button:focus {
   opacity: 20%;
 }
 
-.reset-btn:hover {
+.reset-btn:hover,
+.completed {
   opacity: 100%;
 }
 

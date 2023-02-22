@@ -65,6 +65,8 @@ function calculateTip(billTotal, tipPercentage, numberOfPeople) {
 
   tipAmountPerPerson.innerHTML = `$${tip}`;
   totalToPayPerPerson.innerHTML = `$${totalAmount}`;
+
+  resetButton.classList.add("completed");
 }
 
 resetButton.addEventListener("click", reset);
@@ -76,4 +78,5 @@ function reset() {
   numOfPeople.value = "";
   customTipPercentage.value = "";
   cantBeZero.hidden = true;
+  resetButton.classList.remove("completed");
 }
