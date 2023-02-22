@@ -12,7 +12,7 @@ buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
     customTipPercentage.value = "";
 
-    button.classList.add("active");
+    // button.classList.add("active");
 
     tipValue = e.target.innerText;
     tipValue = tipValue.substr(0, tipValue.length - 1);
